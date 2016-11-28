@@ -1,0 +1,59 @@
+context default
+	keyword whole resource brightmagenta
+	keyword whole data brightmagenta
+	keyword whole provider brightmagenta
+	keyword whole variable yellow
+	keyword { white
+	keyword } white
+	keyword = brightred
+	keyword true yellow
+	keyword false yellow
+	keyword [ white
+	keyword ] white
+	keyword whole \{-0123456789\}\[0123456789\] yellow
+	keyword whole count red
+	keyword whole depends_on red
+	keyword <<EOF red
+	keyword EOF red
+{{$color := .KeywordColor}}{{range $k, $v := .Keywords}}	keyword whole {{$k}} {{$color}}
+{{end}}
+
+context exclusive /\* \*/ brown
+context exclusive // \n brown
+context # \n brown
+
+context exclusive whole linestart resource { brightgreen
+	keyword " green
+{{$color := .ResourceColor}}{{range $k, $v := .Resources}}	keyword whole {{$k}} {{$color}}
+{{end}}
+
+context exclusive whole linestart data { brightgreen
+	keyword " green
+{{$color := .DataSourceColor}}{{range $k, $v :=  .DataSources}}	keyword whole {{$k}} {{$color}}
+{{end}}
+
+context exclusive whole linestart provider { brightgreen
+	keyword " green
+{{$color := .ProviderColor}}{{range $k, $v :=  .Providers}}	keyword whole {{$k}} {{$color}}
+{{end}}
+
+context " " green
+	keyword \\\{abfnrtv\\'"\} brightgreen
+	keyword \\\{0123\}\{01234567\}\{01234567\} brightgreen
+	keyword \\x\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\} brightgreen
+	keyword \\u\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\} brightgreen
+	keyword \\U\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\}\{0123456789abcdefABCDEF\} brightgreen
+	keyword whole var.\{-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\}\[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-\] yellow
+	keyword ${ brightgreen
+	keyword } brightgreen
+	keyword ( brightgreen
+	keyword ) brightgreen
+{{$color := .ResourceColor}}{{range $k, $v := .Resources}}	keyword whole {{$k}} {{$color}}
+{{end}}
+{{$color := .DataSourceColor}}{{range $k, $v := .DataSources}}	keyword whole data.{{$k}} {{$color}}
+{{end}}
+{{$color := .FunctionColor}}{{range $k, $v := .Functions}}	keyword whole {{$k}} {{$color}}
+{{end}}
+	keyword wholeright .\{-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\}\[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.\]} brightgreen
+
+context exclusive whole <<\[\s\]\[-\]\[\s\]\[\\\]EOF EOF green
