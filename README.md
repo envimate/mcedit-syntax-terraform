@@ -5,7 +5,7 @@ It extracts terraform functions list, AWS resources and AWS data sources list an
 Colors scheme can be customized as arguments or in template file
 
 ## Adding into mcedit
-You can generate new `tf.syntax` with different color scheme, or simply download it from releases page.
+You can generate new `tf.syntax` with different color scheme, or simply download latest [release](./releases/download/v0.1/tf.syntax).
 
 Copy the tf.syntax into your syntax folder `/usr/share/mc/syntax/`, or if you are using user-specific configuration, than `$HOME/.local/share/mc/mcedit/`.
 
