@@ -1,6 +1,24 @@
 # mcedit-syntax-terraform
 
-This package can be used to generate mcedit (Midnight Commander) syntax file for terraform. It extracts terraform functions list, AWS resources and AWS data sources list and generates syntax file. Colors scheme can be customized as arguments or in template file
+This package can be used to generate mcedit (Midnight Commander) syntax file for terraform (.tf) file format highlighting.
+It extracts terraform functions list, AWS resources and AWS data sources list and generates syntax file.
+Colors scheme can be customized as arguments or in template file
+
+## Adding into mcedit
+You can generate new `tf.syntax` with different color scheme, or simply download it from releases page.
+
+Copy the tf.syntax into your syntax folder `/usr/share/mc/syntax/`, or if you are using user-specific configuration, than `$HOME/.local/share/mc/mcedit/`.
+
+You need to register new file type in your `Syntax` file, by adding following lines before `unknown` file type
+
+    file ..\*\\.(tf|tf)$ Terraform
+    include tf.syntax
+
+`Syntax` file usually can be found in `/usr/share/mc/syntax/Syntax` or `$HOME/.config/mc/mcedit/Syntax`
+
+## Preview
+
+![Terraform highlight Preview](https://gist.githubusercontent.com/spirius/8cd532841e612c55deae244c7eef9180/raw/f8fbf7cf12d81a3daea555b339f8f40d3765ec1d/terraform-syntax-preview.png)
 
 ## Syntax file generation
 
@@ -27,18 +45,6 @@ Usage of colors:
 ```
 
 For more information about syntax file format and allowed colors list please refer to [mcedit manual](http://linuxcommand.org/man_pages/mcedit1.html).
-
-## Adding into mcedit
-You can generate new `tf.syntax` with different color scheme, or simply download it from releases page.
-
-Copy the tf.syntax into your syntax folder `/usr/share/mc/syntax/`, or if you are using user-specific configuration, than `$HOME/.local/share/mc/mcedit/`.
-
-You need to register new file type in your `Syntax` file, by adding following lines before `unknown` file type
-
-    file ..\*\\.(tf|tf)$ Terraform
-    include tf.syntax
-
-`Syntax` file usually can be found in `/usr/share/mc/syntax/Syntax` or `$HOME/.config/mc/mcedit/Syntax`
 
 # Known issues
 There is a formating issue with lines like
