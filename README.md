@@ -52,3 +52,8 @@ There is a formating issue with lines like
     source_code_hash = "${base64sha256(file("email-function.zip"))}"
 
 Terraform supports quotes in quotes, but mcedit cannot parse that propely, and inner part is being shown with color scheme of default context.
+
+# Other
+If you want to get default black background color, edit `$HOME/.config/mc/ini` and change `basecolor` to
+
+    base_color=editnormal=default,black:editwhitespace=default,red
