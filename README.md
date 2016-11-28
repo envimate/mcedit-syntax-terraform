@@ -7,6 +7,27 @@ This package can be used to generate mcedit (Midnight Commander) syntax file for
     go get github.com/envimate/mcedit-syntax-terraform
     mcedit-syntax-terraform > tf.syntax
 
+You can specify different colors
+
+## Usage
+```
+Usage of colors:
+  -data-source string
+    	color of data sources (default "brightcyan")
+  -func string
+    	color of functions (default "yellow")
+  -keyword string
+    	color of keywords (default "white")
+  -provider string
+    	color of providers (default "red")
+  -resource string
+    	color of resources (default "brightcyan")
+  -var string
+    	color of variables (default "yellow")
+```
+
+For more information about syntax file format and allowed colors list please refer to [mcedit manual](http://linuxcommand.org/man_pages/mcedit1.html).
+
 ## Adding into mcedit
 You can generate new `tf.syntax` with different color scheme, or simply download it from releases page.
 
