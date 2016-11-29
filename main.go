@@ -97,6 +97,23 @@ func main() {
 
 	t.Providers["aws"] = true
 
+	var addKeywords = []string{
+		"private_key",
+		"script_path",
+		"bastion_user",
+		"bastion_password",
+		"bastion_private_key",
+		"bastion_host",
+		"bastion_port",
+		"connection",
+		"provisioner",
+		"inline",
+	}
+
+	for _, k := range addKeywords {
+		t.Keywords[k] = true
+	}
+
 	tpl = template.New("template")
 
 	tpl, err = tpl.ParseFiles("template")
