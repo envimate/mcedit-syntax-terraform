@@ -11,7 +11,7 @@ Copy the tf.syntax into your syntax folder `/usr/share/mc/syntax/`, or if you ar
 
 You need to register new file type in your `Syntax` file, by adding following lines before `unknown` file type
 
-    file ..\*\\.(tf|tf)$ Terraform
+    file ..\*\\.(tf|tfvars)$ Terraform
     include tf.syntax
 
 `Syntax` file usually can be found in `/usr/share/mc/syntax/Syntax` or `$HOME/.config/mc/mcedit/Syntax`
