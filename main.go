@@ -6,7 +6,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/hashicorp/terraform/builtin/providers/aws"
+	"github.com/terraform-providers/terraform-provider-aws/aws"
 	"github.com/hashicorp/terraform/config"
 	"github.com/hashicorp/terraform/helper/schema"
 )
